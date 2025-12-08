@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="55" fill="#1a1a1a"/>
+  
+  <!-- Letter V -->
+  <path d="M25 35 L40 75 L35 75 L30 50 L25 35 Z" fill="#ffffff"/>
+  <path d="M35 50 L45 75 L40 75 L35 50 Z" fill="#ffffff"/>
+  
+  <!-- Letter G -->
+  <circle cx="60" cy="60" r="15" stroke="#ffffff" stroke-width="3" fill="none"/>
+  <path d="M55 60 L65 60" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 55 L60 65" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Letter S -->
+  <path d="M75 50 Q85 45 85 55 Q85 60 80 60 Q85 60 85 65 Q85 75 75 75" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
