@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Check, X } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,6 +9,11 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,10 +37,47 @@ const Contact = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Get EmailJS configuration from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      );
+
+      setSubmitStatus({
+        success: true,
+        message: 'Your message has been sent successfully!',
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus({
+        success: false,
+        message: 'Failed to send message. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+      
+      // Clear status message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -176,16 +219,47 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="relative w-full px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 rounded-lg text-white font-semibold text-lg hover:from-orange-700 hover:to-red-700 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  <span>Send Message</span>
-                  <Send size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              <div className="space-y-4">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`relative w-full px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 rounded-lg text-white font-semibold text-lg hover:from-orange-700 hover:to-red-700 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 overflow-hidden group ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    {isSubmitting ? (
+                      <>
+                        <span>Sending...</span>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+                      </>
+                    )}
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+
+                {submitStatus && (
+                  <div
+                    className={`p-4 rounded-lg flex items-start space-x-3 ${
+                      submitStatus.success
+                        ? 'bg-green-50 text-green-800 border border-green-200'
+                        : 'bg-red-50 text-red-800 border border-red-200'
+                    }`}
+                  >
+                    {submitStatus.success ? (
+                      <Check size={20} className="text-green-500 flex-shrink-0 mt-0.5" />
+                    ) : (
+                      <X size={20} className="text-red-500 flex-shrink-0 mt-0.5" />
+                    )}
+                    <p className="text-sm">{submitStatus.message}</p>
+                  </div>
+                )}
+              </div>
             </form>
           </div>
         </div>

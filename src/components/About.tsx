@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Award, Users, Briefcase, Coffee } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 const stats = [
-  { icon: Briefcase, value: '200+', label: 'Projects Completed' },
   { icon: Users, value: '150+', label: 'Happy Clients' },
-  { icon: Award, value: '15+', label: 'Awards Won' },
-  { icon: Coffee, value: '1000+', label: 'Cups of Coffee' },
+  { icon: Users, value: '30+', label: 'Years of Experience' },
 ];
 
 const About = () => {
@@ -87,14 +85,7 @@ const About = () => {
             <div className="relative">
               {/* Photo Section with Cool Features */}
               <div className="relative group mb-16">
-                {/* Floating badge */}
-                <div className="absolute -top-6 -right-6 z-20 bg-gradient-to-r from-orange-600 to-red-600 rounded-full p-4 shadow-2xl shadow-orange-500/30 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center">
-                    <Award size={32} className="text-orange-600" />
-                  </div>
-                </div>
-                
-                {/* Photo container with normal border */}
+                  {/* Photo container with normal border */}
                 <div className="relative">
                   <div className="w-80 h-80 mx-auto rounded-full overflow-hidden ring-4 ring-orange-600 group-hover:ring-red-600 transition-all duration-500">
                     <img 

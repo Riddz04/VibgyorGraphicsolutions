@@ -15,7 +15,7 @@ const projects: Project[] = [
     image: '/Doggie Dabbas-1.jpeg',
     category: 'Special Feature',
     title: 'Doggie Dabbas Ad',
-    description: 'Ad listed in ',
+    description: 'Ad listed in The Archive magazine with recognition',
     fit: 'contain',
     position: 'center',
   },
@@ -23,7 +23,7 @@ const projects: Project[] = [
     image: '/Doggie Dabbas-2.jpeg',
     category: 'Special Feature',
     title: 'Doggie Dabbas Ad',
-    description: 'Sustainable packaging design with a focus on premium feel and functionality',
+    description: 'Ad listed in The Archive magazine with recognition',
     fit: 'contain',
     position: 'center',
   },
@@ -267,7 +267,8 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const categories = ['All', 'Branding', 'Packaging', 'Special Feature'];
+  const categories = ['All', 'Branding', 'Packaging'];
+  const specialFeatureProjects = projects.filter(p => p.category === 'Special Feature');
   const filteredProjects = activeCategory === 'All' 
     ? projects.filter(p => p.category !== 'Special Feature')
     : projects.filter(p => p.category === activeCategory);
@@ -347,23 +348,21 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Special Feature Section */}
-          {activeCategory === 'All' && (
-            <div className="w-full mb-16">
-              <h3 className="text-3xl font-bold mb-6 text-gray-800">Featured Projects</h3>
-              <p className="text-gray-600 mb-6">Highlighting some of our most impactful work</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                {projects
-                  .filter(project => project.category === 'Special Feature')
-                  .slice(0, 4)
-                  .map((project, index) => (
+          {/* Special Feature Section - Always Visible */}
+          <div className="w-full mb-20">
+            <h3 className="text-4xl font-bold mb-2 text-gray-900">Special Features</h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mb-8"></div>
+            <p className="text-xl text-gray-600 mb-8 max-w-5xl">Showcasing our most prestigious and recognized works that highlight our expertise and achievements in the industry.</p>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              {specialFeatureProjects.map((project, index) => (
                     <div
                       key={`featured-${index}`}
                       onClick={handleImageClick}
                       onKeyDown={(e) => e.key === 'Enter' && handleImageClick(e as any)}
                       role="button"
                       tabIndex={0}
-                      className="group relative overflow-hidden rounded-2xl cursor-pointer h-80 md:h-96 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                      className="group relative overflow-hidden rounded-3xl cursor-pointer h-[500px] bg-white shadow-2xl hover:shadow-2xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                     >
                       <div className="absolute inset-0">
                         <img 
@@ -371,27 +370,25 @@ const Portfolio = () => {
                           alt={project.title || 'Featured project'}
                           className={`w-full h-full ${project.fit === 'contain' ? 'object-contain' : 'object-cover'} group-hover:scale-105 transition-transform duration-700 ease-out`}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                          <div className="space-y-3 w-full">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                          <div className="space-y-4 w-full">
                             {project.title && (
-                              <h4 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                              <h4 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
                                 {project.title}
                               </h4>
                             )}
                             
                             {project.description && (
-                              <p className="text-white/90 text-sm md:text-base leading-relaxed drop-shadow-md">
+                              <p className="text-white/90 text-base md:text-lg leading-relaxed drop-shadow-md">
                                 {project.description}
                               </p>
                             )}
                             
-                            {project.category && (
-                              <div className="pt-1">
-                                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-amber-400/50 hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-md hover:shadow-orange-500/30">
-                                  {project.category}
-                                </span>
-                              </div>
-                            )}
+                            <div className="pt-2">
+                              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-amber-500 text-white border border-amber-400/50 hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg hover:shadow-orange-500/30">
+                                Special Feature
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -399,9 +396,11 @@ const Portfolio = () => {
                   ))}
               </div>
             </div>
-          )}
+          </div>
 
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">All Projects</h3>
+          <div className="border-t border-gray-200 pt-16 mt-16 px-6">
+            <h3 className="text-3xl font-bold mb-6 text-gray-900">All Projects</h3>
+            <p className="text-gray-600 mb-8">Browse through our selective collection of creative works and branding projects.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
             {filteredProjects.map((project, index) => {
               const fitClass = project.fit === 'contain' ? 'object-contain' : 'object-cover';
@@ -437,7 +436,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };
