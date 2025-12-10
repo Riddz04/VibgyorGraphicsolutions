@@ -8,6 +8,7 @@ interface Project {
   description?: string;
   fit?: 'cover' | 'contain';
   position?: 'center' | 'top' | 'bottom' | 'left' | 'right';
+  link?: string;
 }
 
 const projects: Project[] = [
@@ -44,222 +45,375 @@ const projects: Project[] = [
     position: 'center',
   },
   {
-    image: '/BR.jpg',
+    image: '/Branding/BR.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/Carmate.png',
+    image: '/Branding/Carmate.png',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/BJE.jpg',
+    image: '/Branding/BJE.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/GROW.png',
+    image: '/Branding/GROW.png',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/hkx.png',
+    image: '/Branding/hkx.png',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/Jackway.jpg',
+    image: '/Branding/Jackway.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/Jalsa.png',
+    image: '/Branding/Jalsa.png',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/JC.png',
+    image: '/Branding/JC.png',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/KC.jpg',
+    image: '/Branding/KC.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/Kosmyq.jpg',
+    image: '/Branding/Kosmyq.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/FH.jpg',
+    image: '/Branding/FH.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/Stone.jpg',
+    image: '/Branding/Stone.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/SGR.jpg',
+    image: '/Branding/SGR.jpg',
     category: 'Branding',
     fit: 'contain',
     position: 'center',
   },
   {
-    image: '/SC.jpg',
+    image: '/Branding/SC.jpg',
     category: 'Branding',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/1 almond.png',
+    image: '/Packaging/1 almond.png',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/1 gold-01.jpg',
+    image: '/Packaging/1 gold-01.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/1 gold-03.jpg',
+    image: '/Packaging/1 gold-03.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/2 berry blush.png',
+    image: '/Packaging/2 berry blush.png',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/2.jpg',
+    image: '/Packaging/2.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/3 chco delight.png',
+    image: '/Packaging/3 chco delight.png',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/3.jpg',
+    image: '/Packaging/3.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/4 fruity surprise.png',
+    image: '/Packaging/4 fruity surprise.png',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/5 face souffle.png',
+    image: '/Packaging/5 face souffle.png',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/7 papay face scrub.png',
+    image: '/Packaging/7 papay face scrub.png',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/combine12.jpg',
+    image: '/Packaging/combine12.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/combine13.jpg',
+    image: '/Packaging/combine13.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/combine19.jpg',
+    image: '/Packaging/combine19.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/combine20.jpg',
+    image: '/Packaging/combine20.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/combine22.jpg',
+    image: '/Packaging/combine22.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/pack 8-01.jpg',
+    image: '/Packaging/pack 8-01.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/pack4-08.jpg',
+    image: '/Packaging/pack4-08.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/pack4-06.jpg',
+    image: '/Packaging/pack4-06.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/PACK9-01.jpg',
+    image: '/Packaging/PACK9-01.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/packagingi-06.jpg',
+    image: '/Packaging/packagingi-06.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/packagingi-07.jpg',
+    image: '/Packaging/packagingi-07.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
   {
-    image: '/packagingi-08.jpg',
+    image: '/Packaging/packagingi-08.jpg',
     category: 'Packaging',
     fit: 'cover',
     position: 'center',
   },
-  
+  {
+    image: '/Banners/Sanjay Dhawan_Page_3.jpg',
+    category: 'Social Media and App Banners',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Banners/Sanjay Dhawan_Page_4.jpg',
+    category: 'Social Media and App Banners',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Banners/Sanjay Dhawan_Page_5.jpg',
+    category: 'Social Media and App Banners',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Banners/Sanjay Dhawan_Page_6.jpg',
+    category: 'Social Media and App Banners',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Post/1.jpg',
+    category: 'Social Media Post',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Post/2.jpg',
+    category: 'Social Media Post',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Post/post 10.jpg',
+    category: 'Social Media Post',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: ' /Reports/Screenshot 2025-12-10 at 21.38.47.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link: 'https://drive.google.com/file/d/1hvFmcnKL-Ny_OcmyLCHtWwycbr7LsyCw/view?usp=sharing',
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.39.24.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/13YuByTG72j8_o5WT3PpF3hYETzKYkmhH/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.39.41.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1r_uJ8MX5NSrPOJ5WiHlhkm0sCG1OcLZC/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.40.25.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1qXZzZ2SKAjLzhc9iiAevklNDOb6y5KeY/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.40.31.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1JahU8RQ9T3Ym73uiLMS7U0WmEEjTEDhY/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.40.37.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1VT2prh2eLN6wXfgroGOn3AgMWa5dSeNt/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.40.50.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1Ecg2lAcp4BG8ec-eig_rp_UmJMThJSUz/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.40.57.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1ns4AHgbxiZVTe0sBwHWEtNULLvyL3rms/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.41.04.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1iZhaP7JyApw34EMjjnDoMzlJnG1gzwXV/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.41.11.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1H6BIRu1QEWOCDShQfNRnujNdMrjg9cKe/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.42.10.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1Tca6nZggeDRZ-lsqMPAbDn3s1hfT8oOo/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.42.02.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1kJQSBzCCe_-hCrO7wdJ1g2qFiBssNu-Q/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.41.55.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1UkCFEOj8cWHa_9upLV24vtiKphL8T-KF/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.41.47.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1DGsOUK7gCDfHsd_hBgwibHD8y6Xs-6mR/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.41.36.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1FvxQCzRVkm5Fug4kLCLDGyqIG4EyTmP9/view?usp=sharing'
+  },
+  {
+    image: '/Reports/Screenshot 2025-12-10 at 21.41.24.png',
+    category: 'Annual Reports',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1XA3fMk3xeYZlHX0_rdtcEGOvrpFizTGU/view?usp=sharing'
+  },
 ];
 
 const Portfolio = () => {
@@ -267,15 +421,25 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const categories = ['All', 'Branding', 'Packaging'];
+  const categories = ['All', 'Branding', 'Packaging','Social Media and App Banners','Social Media Post','Annual Reports','Magazine and Coffee Table Book'];
   const specialFeatureProjects = projects.filter(p => p.category === 'Special Feature');
   const filteredProjects = activeCategory === 'All' 
     ? projects.filter(p => p.category !== 'Special Feature')
     : projects.filter(p => p.category === activeCategory);
 
-  const handleImageClick = (e: React.MouseEvent) => {
+  const handleImageClick = (e: React.MouseEvent | React.KeyboardEvent, project: Project) => {
     e.preventDefault();
     e.stopPropagation();
+    const url = project.link || project.image;
+    if (url) {
+      window.open(url, '_blank');
+    }
+  };
+  
+  const handleKeyDown = (e: React.KeyboardEvent, project: Project) => {
+    if (e.key === 'Enter') {
+      handleImageClick(e, project);
+    }
   };
 
   // Intersection Observer for animations
@@ -348,21 +512,22 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Special Feature Section - Always Visible */}
-          <div className="w-full mb-20">
-            <h3 className="text-4xl font-bold mb-2 text-gray-900">Special Features</h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mb-8"></div>
-            <p className="text-xl text-gray-600 mb-8 max-w-5xl">Showcasing our most prestigious and recognized works that highlight our expertise and achievements in the industry.</p>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-              {specialFeatureProjects.map((project, index) => (
+          {/* Special Feature Section - Only shown when 'All' is selected */}
+          {activeCategory === 'All' && (
+            <div className="w-full mb-20">
+              <h3 className="text-4xl font-bold mb-2 text-gray-900">Special Features</h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mb-8"></div>
+              <p className="text-xl text-gray-600 mb-8 max-w-5xl">Showcasing our most prestigious and recognized works that highlight our expertise and achievements in the industry.</p>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                {specialFeatureProjects.map((project, index) => (
                     <div
                       key={`featured-${index}`}
-                      onClick={handleImageClick}
-                      onKeyDown={(e) => e.key === 'Enter' && handleImageClick(e as any)}
+                      onClick={(e) => handleImageClick(e, project)}
+                      onKeyDown={(e) => handleKeyDown(e, project)}
+                      className="group relative overflow-hidden rounded-3xl cursor-pointer h-[500px] bg-white shadow-2xl hover:shadow-2xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                       role="button"
                       tabIndex={0}
-                      className="group relative overflow-hidden rounded-3xl cursor-pointer h-[500px] bg-white shadow-2xl hover:shadow-2xl transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                     >
                       <div className="absolute inset-0">
                         <img 
@@ -396,12 +561,26 @@ const Portfolio = () => {
                   ))}
               </div>
             </div>
+          )}
           </div>
 
-          <div className="border-t border-gray-200 pt-16 mt-16 px-6">
-            <h3 className="text-3xl font-bold mb-6 text-gray-900">All Projects</h3>
-            <p className="text-gray-600 mb-8">Browse through our selective collection of creative works and branding projects.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+          <div className="border-t border-gray-200 pt-16 mt-16 px-6 md:px-12 lg:px-24 xl:px-32">
+            <h3 className="text-3xl font-bold mb-6 text-gray-900">
+              {activeCategory === 'All' ? 'All Projects' : activeCategory} {activeCategory === 'All' ? '' : 'Projects'}
+            </h3>
+            <p className="text-gray-600 mb-8">
+              {activeCategory === 'All' 
+                ? 'Browse through our selective collection of creative works and branding projects.'
+                : `Showcasing our ${activeCategory.toLowerCase()} projects and creative solutions.`
+              }
+            </p>
+          <div 
+            className={`grid gap-4 md:gap-6 ${
+              activeCategory === 'Social Media and App Banners' || activeCategory === 'Annual Reports'
+                ? 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' 
+                : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'
+            }`}
+          >
             {filteredProjects.map((project, index) => {
               const fitClass = project.fit === 'contain' ? 'object-contain' : 'object-cover';
               const positionClass =
@@ -412,8 +591,8 @@ const Portfolio = () => {
               return (
               <div
                 key={index}
-                onClick={handleImageClick}
-                onKeyDown={(e) => e.key === 'Enter' && handleImageClick(e as any)}
+                onClick={(e) => handleImageClick(e, project)}
+                onKeyDown={(e) => handleKeyDown(e, project)}
                 role="button"
                 tabIndex={0}
                 className={`group relative overflow-hidden rounded-xl aspect-square cursor-pointer transition-all duration-700 bg-white shadow-lg hover:shadow-2xl ${
