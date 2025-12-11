@@ -43,6 +43,7 @@ const projects: Project[] = [
     description : 'Book presented by Minister of Road Transport & Highways of India - Mr. Nitin Gadkari',
     fit: 'contain',
     position: 'center',
+    link:'https://drive.google.com/file/d/16ykFf0W1RZlbqPOBCdkoi3YRZ605riU-/view?usp=sharing'
   },
   {
     image: '/Branding/BR.jpg',
@@ -303,6 +304,24 @@ const projects: Project[] = [
     position: 'center',
   },
   {
+    image: '/Finishing/Philips Alia_30329.jpg',
+    category: 'Image Finishing',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Finishing/Philips Alia_30717 (1).jpg',
+    category: 'Image Finishing',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
+    image: '/Finishing/Philips Alia_30799.jpg',
+    category: 'Image Finishing',
+    fit: 'contain',
+    position: 'center',
+  },
+  {
     image: ' /Reports/Screenshot 2025-12-10 at 21.38.47.png',
     category: 'Annual Reports',
     fit: 'contain',
@@ -414,6 +433,90 @@ const projects: Project[] = [
     position: 'center',
     link:'https://drive.google.com/file/d/1XA3fMk3xeYZlHX0_rdtcEGOvrpFizTGU/view?usp=sharing'
   },
+  {
+    image: '/Book/aarohan.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1sez3Q3MBRO15opjXQ6lz66s25RKQ5fPU/view?usp=sharing'
+  },
+  {
+    image: '/Book/catchtherain.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/18xYZDar3-ns1ss6Yp4F6CqIojEKxSnFa/view?usp=sharing'
+  },
+  {
+    image: '/Book/Insight.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/14kxctDicdq0tdgrQDz5hBUpp7Rw3VGtg/view?usp=sharing'
+  },
+  {
+    image: '/Book/jalAbhiyan.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1FPA3fk_QuTMdWBJSPi28XXHwZM42nqoS/view?usp=sharing'
+  },
+  {
+    image: '/Book/jalAndolan.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1D93wz7L8EZpfDv6eK0Jf6b6h06BHb9ha/view?usp=sharing'
+  },
+  {
+    image: '/Book/jla.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1oyYINOovNP4KvDW0a6-myJ-wyV54ACfq/view?usp=sharing'
+  },
+  {
+    image: '/Book/jsa.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/18xYZDar3-ns1ss6Yp4F6CqIojEKxSnFa/view?usp=sharing'
+  },
+  {
+    image: '/Book/modi.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/17S3Mc9F6vXpryBibMO3zPgaap95271AD/view?usp=sharing'
+  },
+  {
+    image: '/Book/msft.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1z-rrzEOimSYmUYEXH_Dp9PvgO-yhxpeF/view?usp=sharing'
+  },
+  {
+    image: '/Book/Screenshot 2025-12-11 at 18.36.08.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1MbsKAg928KuVRNq8Qtsf3O1tKAUPEOk3/view?usp=sharing'
+  },
+  {
+    image: '/Book/tech.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1Gp6XdNmW39PgiyeqP-XwwmnFtvlK7oT7/view?usp=sharing'
+  },
+  {
+    image: '/Book/yamunaManthan.png',
+    category: 'Magazine and Coffee Table Book',
+    fit: 'contain',
+    position: 'center',
+    link:'https://drive.google.com/file/d/1A_VMkgG1POgJfL-VRb9KLTSpQhh598QZ/view?usp=sharing'
+  },
 ];
 
 const Portfolio = () => {
@@ -421,7 +524,7 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const categories = ['All', 'Branding', 'Packaging','Social Media and App Banners','Social Media Post','Annual Reports','Magazine and Coffee Table Book'];
+  const categories = ['All', 'Branding', 'Packaging','Social Media and App Banners','Social Media Post','Annual Reports','Magazine and Coffee Table Book','Image Finishing'];
   const specialFeatureProjects = projects.filter(p => p.category === 'Special Feature');
   const filteredProjects = activeCategory === 'All' 
     ? projects.filter(p => p.category !== 'Special Feature')
@@ -576,8 +679,10 @@ const Portfolio = () => {
             </p>
           <div 
             className={`grid gap-4 md:gap-6 ${
-              activeCategory === 'Social Media and App Banners' || activeCategory === 'Annual Reports'
+              activeCategory === 'Social Media and App Banners' || activeCategory === 'Annual Reports' || activeCategory === 'Magazine and Coffee Table Book'
                 ? 'grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' 
+                : activeCategory === 'Image Finishing'
+                ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
                 : 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'
             }`}
           >

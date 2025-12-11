@@ -26,57 +26,76 @@ const Navigation = ({ scrollY }: NavigationProps) => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-lg py-4 shadow-lg border-b border-orange-100/50' : 'bg-white/80 backdrop-blur-sm py-6'
-      }`}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <img src="/logo2.png" alt="VGS Logo" className="h-10 w-15 transition-transform duration-300 hover:scale-110" />
-          <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">VGS</span>
-        </div>
-
-        <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.href)}
-              className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-300 relative group"
-            >
-              {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-red-600 group-hover:w-full transition-all duration-300"></span>
-            </button>
-          ))}
-        </div>
-
-        <button
-          className="md:hidden text-gray-900 hover:text-orange-600 transition-colors duration-300"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      <div
-        className={`md:hidden fixed top-0 right-0 h-screen w-64 bg-gradient-to-b from-white to-orange-50/30 shadow-2xl transform transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+    <>
+      {/* Mobile menu overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+      
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white/95 backdrop-blur-lg py-3 md:py-4 shadow-lg' : 'bg-white/80 backdrop-blur-sm py-4 md:py-6'
         }`}
       >
-        <div className="flex flex-col items-start space-y-6 p-8 mt-20">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.href)}
-              className="text-xl text-gray-700 hover:text-orange-600 font-medium transition-colors duration-300 relative group"
-            >
-              {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-red-600 group-hover:w-full transition-all duration-300"></span>
-            </button>
-          ))}
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <img 
+              src="/logo2.png" 
+              alt="VGS Logo" 
+              className="h-8 w-auto sm:h-10 transition-transform duration-300 hover:scale-110" 
+            />
+            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              VGS
+            </span>
+          </div>
+
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="text-sm sm:text-base text-gray-700 hover:text-orange-600 font-medium transition-colors duration-300 relative group px-2 py-1"
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-red-600 group-hover:w-full transition-all duration-300"></span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            className="md:hidden text-gray-900 hover:text-orange-600 transition-colors duration-300 p-2"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      </div>
-    </nav>
+
+        {/* Mobile menu */}
+        <div
+          className={`md:hidden fixed top-0 right-0 h-screen w-4/5 max-w-sm bg-white shadow-2xl transform transition-all duration-300 ease-in-out z-50 ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="flex flex-col items-start space-y-4 p-6 pt-20">
+            {navItems.map((item, index) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="w-full text-left text-lg text-gray-700 hover:text-orange-600 font-medium transition-colors duration-300 relative group py-2"
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-red-600 group-hover:w-full transition-all duration-300"></span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };
 

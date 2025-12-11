@@ -32,43 +32,43 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-32 bg-gradient-to-b from-white to-orange-50/30" ref={sectionRef}>
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-orange-50/30" ref={sectionRef}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div
             className={`transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 flex items-center gap-3">
-              About 
-              <span className="overflow-hidden relative group cursor-pointer inline-block" style={{ height: '1.2em', lineHeight: '1.2em', minWidth: '440px' }}>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              <span>About</span>
+              <span className="overflow-hidden relative group cursor-pointer inline-block h-[1.2em] leading-[1.2em] w-full sm:w-auto sm:min-w-[280px] lg:min-w-[360px]">
                 <span className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-[1.2em]">
-                  <span className="h-[1.2em] flex items-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent whitespace-nowrap" style={{ lineHeight: '1.2em' }}>
+                  <span className="h-[1.2em] flex items-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                     the Owner
                   </span>
-                  <span className="h-[1.2em] flex items-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent whitespace-nowrap" style={{ lineHeight: '1.2em' }}>
+                  <span className="h-[1.2em] flex items-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                     Sanjay Dhawan
                   </span>
                 </span>
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mb-8"></div>
+            <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-orange-600 to-red-600 mb-6 sm:mb-8"></div>
 
-            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 sm:mb-6 leading-relaxed">
               Hi, I'm a passionate graphic designer with over 30 years of experience transforming ideas into stunning visual experiences. My approach combines creativity with strategic thinking to deliver designs that not only look beautiful but also achieve business goals.
             </p>
 
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
               I believe in the power of color, which is why VIBGYOR represents my philosophy – bringing together all the colors of creativity to create something truly unique and memorable. Every project is an opportunity to push boundaries and create something extraordinary.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {['Adobe Creative Suite', 'Figma', 'CorelDRAW', 'Illustrator', 'After Effects', 'InDesign', 'Photoshop', 'Premiere Pro', 'Lightroom', 'Adobe Express'].map(
                 (skill, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-full text-sm border border-orange-200 hover:border-orange-400 hover:bg-gradient-to-r hover:from-orange-100 hover:to-yellow-100 transition-all duration-300 text-gray-700 font-medium cursor-pointer hover:scale-105"
+                    className="px-2 sm:px-3 py-1 sm:py-2 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-full text-xs sm:text-sm border border-orange-100 sm:border-orange-200 hover:border-orange-400 hover:bg-gradient-to-r hover:from-orange-100 hover:to-yellow-100 transition-all duration-300 text-gray-700 font-medium cursor-pointer hover:scale-105 whitespace-nowrap"
                   >
                     {skill}
                   </span>
@@ -78,26 +78,26 @@ const About = () => {
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
+            className={`transition-all duration-1000 delay-200 lg:delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            } lg:block`}
           >
-            <div className="relative">
+            <div className="relative w-full max-w-sm mx-auto">
               {/* Photo Section with Cool Features */}
-              <div className="relative group mb-16">
-                  {/* Photo container with normal border */}
+              <div className="relative group">
                 <div className="relative">
-                  <div className="w-80 h-80 mx-auto rounded-full overflow-hidden ring-4 ring-orange-600 group-hover:ring-red-600 transition-all duration-500">
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden ring-3 sm:ring-4 ring-orange-500/90 group-hover:ring-red-600 transition-all duration-500 shadow-xl">
                     <img 
                       src="papa.jpeg" 
                       alt="Sanjay Dhawan" 
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
                 </div>
 
                 {/* Decorative circles */}
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-orange-400/20 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-orange-400/20 rounded-full blur-xl animate-pulse"></div>
                 <div className="absolute -top-12 -right-12 w-24 h-24 bg-yellow-400/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
               </div>
 
