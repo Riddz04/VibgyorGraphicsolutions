@@ -40,19 +40,25 @@ const About = () => {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-              <span>About</span>
-              <span className="overflow-hidden relative group cursor-pointer inline-block h-[1.2em] leading-[1.2em] w-full sm:w-auto sm:min-w-[280px] lg:min-w-[360px]">
-                <span className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-[1.2em]">
-                  <span className="h-[1.2em] flex items-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    the Owner
-                  </span>
-                  <span className="h-[1.2em] flex items-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    Sanjay Dhawan
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-gray-900">
+              <span className="inline-flex items-baseline gap-3 whitespace-nowrap">
+                <span>About</span>
+
+                {/* Sliding text */}
+                <span className="relative group cursor-pointer overflow-hidden h-[1.6em] leading-[1.6em]">
+                  <span className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-[1.6em]">
+                    <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                      the Owner
+                    </span>
+                    <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                      Sanjay Dhawan
+                    </span>
                   </span>
                 </span>
               </span>
             </h2>
+
+
             <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-orange-600 to-red-600 mb-6 sm:mb-8"></div>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 sm:mb-6 leading-relaxed">
@@ -86,11 +92,11 @@ const About = () => {
               {/* Photo Section with Cool Features */}
               <div className="relative group">
                 <div className="relative">
-                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden ring-3 sm:ring-4 ring-orange-500/90 group-hover:ring-red-600 transition-all duration-500 shadow-xl">
+                  <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden ring-3 sm:ring-4 ring-orange-500/90 group-hover:ring-red-600 transition-all duration-500 shadow-xl flex items-center justify-center">
                     <img 
                       src="papa.jpeg" 
                       alt="Sanjay Dhawan" 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                      className="min-w-full min-h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
                       loading="lazy"
                     />
                   </div>
@@ -102,7 +108,7 @@ const About = () => {
               </div>
 
               {/* Stats below photo */}
-              <div className="relative">
+              <div className="relative mt-12 md:mt-16">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 via-red-400/10 to-yellow-400/10 rounded-3xl blur-2xl"></div>
                 <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-orange-100 shadow-xl">
                   <div className="grid grid-cols-2 gap-6">
