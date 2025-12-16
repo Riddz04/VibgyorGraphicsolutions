@@ -515,25 +515,44 @@ const Portfolio = () => {
     }
   };
 
-  // Intersection Observer for animations
+  // Intersection Observer for animations with mobile fallback
   useEffect(() => {
+    // Fallback: Set visible after a short delay if not triggered by observer
+    const fallbackTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            clearTimeout(fallbackTimer); // Clear the fallback if observer works
+          }
+        });
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.05, // More sensitive threshold
+        rootMargin: '10px' // Trigger slightly before element is in view
+      }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+      
+      // Force check on mobile by dispatching a scroll event
+      setTimeout(() => {
+        window.dispatchEvent(new Event('scroll'));
+      }, 100);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      clearTimeout(fallbackTimer);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
+      observer.disconnect();
     };
   }, []);
 

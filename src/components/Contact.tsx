@@ -49,15 +49,18 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        publicKey
-      );
+      serviceId,
+      templateId,
+      {
+        from_name: formData.name,
+        from_email: formData.email,  // This will be used in the template
+        reply_to: formData.email,    // This sets the Reply-To header
+        to_email: 'vibgyorgs2@gmail.com',  // Your email
+        message: formData.message,
+        subject: `New Contact from ${formData.name}`
+      },
+      publicKey
+    );
 
       setSubmitStatus({
         success: true,
