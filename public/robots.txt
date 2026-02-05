@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://vibgyorgraphicsolutions.com/sitemap.xml
+
+# Disallow sensitive or dynamic areas
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
