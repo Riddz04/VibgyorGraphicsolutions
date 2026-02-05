@@ -42,12 +42,12 @@ const Hero = ({ scrollY }: HeroProps) => {
       >
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 opacity-0 animate-fadeInUp animation-delay-300">
           <span className="bg-gradient-to-r from-orange-600 via-red-600 to-yellow-500 bg-clip-text text-transparent">
-            VIBGYOR
+            VIBGYOR Graphic Solutions
           </span>
         </h1>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-gray-800 opacity-0 animate-fadeInUp animation-delay-450">
-          GRAPHIC SOLUTIONS
-        </h2>
+        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-gray-800 opacity-0 animate-fadeInUp animation-delay-450">
+          Professional Graphic Design Services
+        </p>
         
         <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 md:mb-12 max-w-2xl md:max-w-3xl mx-auto opacity-0 animate-fadeInUp animation-delay-600 leading-relaxed px-4">
           Transforming your vision into stunning design with professional graphic solutions
@@ -72,7 +72,7 @@ const Hero = ({ scrollY }: HeroProps) => {
         <button 
           onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
           className="flex flex-col items-center group"
-          aria-label="Scroll to next section"
+          aria-label="Scroll to services section"
         >
           <ChevronDown size={32} className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300 animate-bounce" />
           <span className="text-sm text-gray-600 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

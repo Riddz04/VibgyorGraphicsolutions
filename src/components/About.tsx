@@ -95,7 +95,7 @@ const About = () => {
                   <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden ring-3 sm:ring-4 ring-orange-500/90 group-hover:ring-red-600 transition-all duration-500 shadow-xl flex items-center justify-center">
                     <img 
                       src="papa.jpeg" 
-                      alt="Sanjay Dhawan" 
+                      alt="Sanjay Dhawan - Founder and Owner of VIBGYOR Graphic Solutions" 
                       className="min-w-full min-h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
                       loading="lazy"
                     />

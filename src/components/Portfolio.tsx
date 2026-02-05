@@ -697,8 +697,9 @@ const Portfolio = () => {
                 <div className="absolute inset-0">
                   <img 
                     src={project.image} 
-                    alt="Project image"
+                    alt={`${project.category} project by VIBGYOR Graphic Solutions`}
                     className={`w-full h-full ${fitClass} ${positionClass} transition-transform duration-700 ease-out group-hover:scale-150 will-change-transform`}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

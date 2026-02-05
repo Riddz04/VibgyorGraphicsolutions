@@ -5,6 +5,8 @@ import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
+import SEO from './components/SEO';
+import { getLocalBusinessSchema, getOrganizationSchema, getWebSiteSchema } from './utils/seo';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -30,6 +32,19 @@ function App() {
 
   return (
     <div className="bg-white text-gray-900 overflow-hidden">
+      <SEO>
+        {/* Structured Data (JSON-LD) */}
+        <script type="application/ld+json">
+          {JSON.stringify(getLocalBusinessSchema())}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(getOrganizationSchema())}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(getWebSiteSchema())}
+        </script>
+      </SEO>
+
       {/* Splash Screen */}
       {isLoading && (
         <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-gradient-to-br from-white via-orange-50/30 to-yellow-50/20 splash-screen-container">
@@ -38,7 +53,7 @@ function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 via-red-400/20 to-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
             <img 
               src="/logo.png" 
-              alt="VGS Logo" 
+              alt="VIBGYOR Graphic Solutions Logo" 
               className="relative h-36 w-88 splash-logo-main"
             />
           </div>
