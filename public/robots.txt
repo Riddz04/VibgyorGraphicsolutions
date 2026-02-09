@@ -2,7 +2,14 @@ User-agent: *
 Allow: /
 Sitemap: https://vibgyorgraphicsolutions.com/sitemap.xml
 
-# Disallow sensitive or dynamic areas
 User-agent: *
 Disallow: /api/
 Disallow: /admin/
+Disallow: *.json$
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 0
