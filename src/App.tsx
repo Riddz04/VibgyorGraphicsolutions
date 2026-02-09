@@ -6,7 +6,7 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import SEO from './components/SEO';
-import { getLocalBusinessSchema, getOrganizationSchema, getWebSiteSchema } from './utils/seo';
+import { getLocalBusinessSchema, getOrganizationSchema, getWebSiteSchema, getAllServicesSchemas, getServicesItemListSchema } from './utils/seo';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -33,16 +33,28 @@ function App() {
   return (
     <div className="bg-white text-gray-900 overflow-hidden">
       <SEO>
-        {/* Structured Data (JSON-LD) */}
-        <script type="application/ld+json">
-          {JSON.stringify(getLocalBusinessSchema())}
-        </script>
+        {/* Organization & Business Schema */}
         <script type="application/ld+json">
           {JSON.stringify(getOrganizationSchema())}
         </script>
         <script type="application/ld+json">
+          {JSON.stringify(getLocalBusinessSchema())}
+        </script>
+        <script type="application/ld+json">
           {JSON.stringify(getWebSiteSchema())}
         </script>
+        
+        {/* ItemList Schema for all 12 services */}
+        <script type="application/ld+json">
+          {JSON.stringify(getServicesItemListSchema())}
+        </script>
+        
+        {/* Individual Service Schemas with OfferCatalog for all 12 services */}
+        {getAllServicesSchemas().map((schema, index) => (
+          <script key={`service-${index}`} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </SEO>
 
       {/* Splash Screen */}

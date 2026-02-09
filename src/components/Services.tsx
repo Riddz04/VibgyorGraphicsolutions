@@ -8,6 +8,7 @@ const services = [
     description: 'Logo design, color palettes, typography, and complete brand guidelines',
     gradient: 'from-orange-500 to-red-500',
     hoverGradient: 'from-orange-600 to-red-600',
+    altText: 'Brand Identity Design - Logo design and branding services icon',
   },
   {
     icon: Share2,
@@ -15,6 +16,7 @@ const services = [
     description: 'Instagram posts, stories, Facebook covers, and social media templates',
     gradient: 'from-red-500 to-rose-500',
     hoverGradient: 'from-red-600 to-rose-600',
+    altText: 'Social Media Design - Instagram and Facebook design services icon',
   },
   {
     icon: Layout,
@@ -22,6 +24,7 @@ const services = [
     description: 'User interface design, wireframes, prototypes, and user experience optimization',
     gradient: 'from-yellow-500 to-orange-500',
     hoverGradient: 'from-yellow-600 to-orange-600',
+    altText: 'UI/UX Design - User interface and user experience design icon',
   },
   {
     icon: Package,
@@ -29,6 +32,7 @@ const services = [
     description: 'Business cards, brochures, flyers, posters, and packaging design',
     gradient: 'from-amber-500 to-orange-500',
     hoverGradient: 'from-amber-600 to-orange-600',
+    altText: 'Print Design - Business cards, brochures, and print materials icon',
   },
   {
     icon: FileText,
@@ -36,6 +40,7 @@ const services = [
     description: 'Presentations, infographics, banners, and promotional materials',
     gradient: 'from-orange-500 to-amber-500',
     hoverGradient: 'from-orange-600 to-amber-600',
+    altText: 'Marketing Materials - Infographics and promotional design icon',
   },
   {
     icon: Video,
@@ -43,6 +48,7 @@ const services = [
     description: 'Animated logos, explainer videos, and social media animations',
     gradient: 'from-rose-500 to-red-500',
     hoverGradient: 'from-rose-600 to-red-600',
+    altText: 'Motion Graphics - Animated videos and logo animation icon',
   },
   {
     icon: Pen,
@@ -50,6 +56,7 @@ const services = [
     description: 'Custom illustrations, icons, character design, and digital art',
     gradient: 'from-red-500 to-orange-500',
     hoverGradient: 'from-red-600 to-orange-600',
+    altText: 'Illustration Services - Custom illustrations and digital art icon',
   },
   {
     icon: Image,
@@ -57,6 +64,7 @@ const services = [
     description: 'Retouching, color correction, compositing, and image manipulation',
     gradient: 'from-yellow-500 to-amber-500',
     hoverGradient: 'from-yellow-600 to-amber-600',
+    altText: 'Photo Editing - Image retouching and manipulation icon',
   },
   {
     icon: Smartphone,
@@ -64,6 +72,7 @@ const services = [
     description: 'Mobile app interfaces, icons, and user flow design',
     gradient: 'from-orange-500 to-yellow-500',
     hoverGradient: 'from-orange-600 to-yellow-600',
+    altText: 'App Design - Mobile application design services icon',
   },
   {
     icon: Monitor,
@@ -71,6 +80,7 @@ const services = [
     description: 'Website layouts, landing pages, and responsive design systems',
     gradient: 'from-amber-500 to-yellow-500',
     hoverGradient: 'from-amber-600 to-yellow-600',
+    altText: 'Web Design - Website and landing page design icon',
   },
   {
     icon: Globe,
@@ -78,6 +88,7 @@ const services = [
     description: 'Email templates, display ads, and digital campaign assets',
     gradient: 'from-red-500 to-orange-500',
     hoverGradient: 'from-red-600 to-orange-600',
+    altText: 'Digital Marketing - Email templates and display ads icon',
   },
   {
     icon: Zap,
@@ -85,6 +96,7 @@ const services = [
     description: 'Design strategy, brand workshops, and creative direction',
     gradient: 'from-amber-500 to-orange-500',
     hoverGradient: 'from-amber-600 to-orange-600',
+    altText: 'Creative Consulting - Design strategy and creative direction icon',
   },
 ];
 
@@ -122,7 +134,7 @@ const Services = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            Professional Services
+            Professional Graphic Design Services
           </h2>
           <p
             className={`text-center text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl md:max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
@@ -140,8 +152,10 @@ const Services = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-2 sm:px-0">
           {services.map((service, index) => (
-            <div
+            <article
               key={index}
+              itemScope
+              itemType="https://schema.org/Service"
               className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 hover:bg-gradient-to-br hover:from-orange-50/30 hover:to-yellow-50/30 transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2 hover:shadow-lg sm:hover:shadow-2xl border border-gray-100 sm:border-gray-200 hover:border-orange-100 sm:hover:border-orange-200 relative overflow-hidden"
               style={{ 
                 transitionDelay: `${index * 80}ms`,
@@ -149,21 +163,24 @@ const Services = () => {
                 transform: isVisible ? 'translateY(0)' : 'translateY(2.5rem)'
               }}
             >
+              <meta itemProp="serviceType" content={service.title} />
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
               <div className="relative z-10">
                 <div
                   className={`w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-3 sm:mb-4 md:mb-5 group-hover:scale-105 sm:group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md sm:shadow-lg group-hover:shadow-xl`}
+                  role="img"
+                  aria-label={service.altText}
                 >
                   <service.icon size={24} className="text-white w-5 h-5 sm:w-7 sm:h-7" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-red-600 transition-all duration-300">
+                <h3 itemProp="name" className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-red-600 transition-all duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-sm">
+                <p itemProp="description" className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-sm">
                   {service.description}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
